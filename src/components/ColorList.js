@@ -1,24 +1,24 @@
 import React from "react";
 
+const colors = [
+  {id:1,color:"firebrick"},
+  {id:2,color:"rebeccapurple"},
+  {id:3,color:"salmon"},
+  {id:4,color:"darkslategray"},
+  {id:5,color:"hotpink"},
+];
+
 function ColorList() {
-  const colors = [
-    "firebrick",
-    "rebeccapurple",
-    "salmon",
-    "darkslategray",
-    "hotpink",
-  ];
+  const listColors = colors.map((colorObj) => (
+    <li key={colorObj.id} style={{color: colorObj.color}}>
+      {colorObj.color}
+    </li>
+  ));
 
   return (
     <div>
       <h1>Top 5 CSS Colors</h1>
-      <ol>
-        <li style={{ color: colors[0] }}>{colors[0]}</li>
-        <li style={{ color: colors[1] }}>{colors[1]}</li>
-        <li style={{ color: colors[2] }}>{colors[2]}</li>
-        <li style={{ color: colors[3] }}>{colors[3]}</li>
-        <li style={{ color: colors[4] }}>{colors[4]}</li>
-      </ol>
+      <ol>{listColors}</ol>
     </div>
   );
 }
